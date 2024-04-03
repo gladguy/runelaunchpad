@@ -1,0 +1,15 @@
+node: separate-outputs
+
+etching: 
+  rune:Dirhams
+  divisible: 1
+  symbol: 'e'
+  premine: 21
+  supply: 1000000021
+  terms:
+  	cap: 1000000
+  	offset:
+  	  end: 144
+  	amount: 1
+  inscriptions:
+   -file: test.png

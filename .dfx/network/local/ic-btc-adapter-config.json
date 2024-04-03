@@ -1,0 +1,12 @@
+{
+  "network": "regtest",
+  "nodes": [
+    "127.0.0.1:9000"
+  ],
+  "incoming_source": {
+    "Path": "/tmp/ic-btc-adapter-socket.2711931.1712019774"
+  },
+  "logger": {
+    "level": "info"
+  }
+}

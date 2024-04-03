@@ -1,0 +1,51 @@
+type Utxo = 
+ record {
+   height: nat32;
+   outpoint: OutPoint;
+   value: Satoshi;
+ };
+type SendRequest = 
+ record {
+   amount_in_satoshi: Satoshi;
+   destination_address: text;
+ };
+type Satoshi__1 = nat64;
+type Satoshi = nat64;
+type Page = vec nat8;
+type OutPoint = 
+ record {
+   txid: blob;
+   vout: nat32;
+ };
+type Network = 
+ variant {
+   mainnet;
+   regtest;
+   testnet;
+ };
+type MillisatoshiPerVByte = nat64;
+type GetUtxosResponse = 
+ record {
+   next_page: opt Page;
+   tip_block_hash: BlockHash;
+   tip_height: nat32;
+   utxos: vec Utxo;
+ };
+type BlockHash = vec nat8;
+type BitcoinAddress = text;
+type BasicBitcoin = 
+ service {
+   /// Returns the balance of the given Bitcoin address.
+   get_balance: (BitcoinAddress) -> (Satoshi__1);
+   /// Returns the 100 fee percentiles measured in millisatoshi/vbyte.
+   /// Percentiles are computed from the last 10,000 transactions (if available).
+   get_current_fee_percentiles: () -> (vec MillisatoshiPerVByte);
+   /// Returns the P2PKH address of this canister at a specific derivation path.
+   get_p2pkh_address: () -> (BitcoinAddress);
+   /// Returns the UTXOs of the given Bitcoin address.
+   get_utxos: (BitcoinAddress) -> (GetUtxosResponse);
+   /// Sends the given amount of bitcoin from this canister to the given address.
+   /// Returns the transaction ID.
+   send: (SendRequest) -> (text);
+ };
+service : (Network) -> BasicBitcoin
