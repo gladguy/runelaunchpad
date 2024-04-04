@@ -1,0 +1,15 @@
+mode: separate-outputs
+etching:
+  rune: TESTING
+  divisibility: 4
+  symbol: 'F'
+  premine: 3
+  supply: 453
+  terms:
+   cap: 10
+   offset:
+     end: 3312
+   amount: 45
+
+inscriptions:
+  - file: /uploads/files/TESTING.png

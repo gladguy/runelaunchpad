@@ -1,0 +1,15 @@
+mode: separate-outputs
+etching:
+  rune: TESTING.ERROR
+  divisibility: 4
+  symbol: 'F'
+  premine: 13
+  supply: 17
+  terms:
+   cap: 1
+   offset:
+     end: 3312
+   amount: 4
+
+inscriptions:
+  - file: /uploads/files/TESTING_ERROR.png
