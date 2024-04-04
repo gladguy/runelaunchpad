@@ -78,14 +78,21 @@ function App() {
         if (!value) {
           isReadyToSend = false;
         }
+      });
+
+      Object.values(formError).forEach((value) => {
+        if (value) {
+          isReadyToSend = false;
+        }
       })
+
       if (isReadyToSend) {
         const formDataToSend = new FormData();
         Object.entries(formData).forEach(([key, value]) => {
           formDataToSend.append(key, value);
         });
-        const res = await axios.post(`http://${IS_LOCAL ? "localhost" : "84.247.174.232"}:1010/api/v1/inscribe`, formDataToSend);
-        console.log("res", res);
+        const res = await axios.post(`${IS_LOCAL ? "http" : "https"}://${IS_LOCAL ? "localhost:1010" : "rune.ordinalsheight.com"}/api/v1/inscribe`, formDataToSend);
+        // console.log("res", res);
         if (res.data.success) {
           setIsSubmitted(true);
           // Notify("success", "Inscribe Successfull");
@@ -93,7 +100,7 @@ function App() {
           Notify("error", res.data.message);
         }
       } else {
-        Notify("warning", "Fill all the fields!");
+        Notify("warning", "Fill all the fields correctly!");
       }
     } catch (error) {
       console.log("Submission error", error);
@@ -103,7 +110,7 @@ function App() {
   useEffect(() => {
     const premineRegex = /^[0-9]+$/;
     const runeRegex = /^[A-Z.]{1,20}$/;
-    const symbolRegex = /^[a-zA-Z]{1}$/;
+    const symbolRegex = /^[A-Z]{1}$/;
     const divisibilityRegex = /^[1-4]$/;
     const capRegex = /^(?:[1-9]\d{0,4}|100000)$/;
     const numRegex = /^(?:[1-9]\d{0,3}|10000)$/;
@@ -216,9 +223,9 @@ function App() {
     })
   };
 
-  console.log("formData", formData);
-  console.log("feeDetails", feeDetails);
-  console.log("btcValue", btcValue);
+  // console.log("formData", formData);
+  // console.log("feeDetails", feeDetails);
+  // console.log("btcValue", btcValue);
 
   return (
     <div className="App">
@@ -291,9 +298,10 @@ function App() {
                           </Row>
                           <Input
                             value={formData.symbol}
-                            placeholder="A-Z / a-z only one character"
+                            placeholder="(A-Z) only one character"
                             name="symbol"
                             type="text"
+                            maxLength={1}
                             onChange={handleChange}
                             className={`input ${formError.symbolErr ? "error" : formData.symbol && "success"}`}
                             required
@@ -477,15 +485,6 @@ function App() {
                               required
                             />
                           </Row>
-                          {/* <Row className="mb-10">
-                        {formData.feeMode === "low"
-                          ? `${feeDetails.low} sat/vB`
-                          : formData.feeMode === "medium"
-                            ? `${feeDetails.medium} sat/vB`
-                            : formData.feeMode === "high"
-                            && `${feeDetails.high} sat/vB`
-                        }
-                      </Row> */}
                         </Col>
                       </Row>
 
