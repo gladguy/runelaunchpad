@@ -84,10 +84,10 @@ Step 3:
 bitcoin-cli -rpcport=9000 -rpccookiefile=/home/waheed/Bitcoin/bitcoin-25.0/data/regtest/.cookie -conf=/home/waheed/Bitcoin/bitcoin-25.0/bitcoin.conf generatetoaddress 6 bcrt1pz0avddqjm6tqfnmwc8mmmhxcaww853wsggqjjpn6xgjmt5cxmvestck5jr
 
 Rune Deployment
-ord --cookie-file /home/waheed/Bitcoin/bitcoin-25.0/data/regtest/.cookie --data-dir /home/waheed/Bitcoin/bitcoin-25.0/data wallet --server-url http://localhost:9001 batch --batch data.yaml --fee-rate 2
+ord --cookie-file /home/waheed/Bitcoin/bitcoin-25.0/data/regtest/.cookie --data-dir /home/waheed/Bitcoin/bitcoin-25.0/data wallet --server-url http://localhost:9001 batch --batch WAHEED.yaml --fee-rate 2
 
 
-ord --cookie-file /home/waheed/Bitcoin/bitcoin-25.0/data/regtest/.cookie --data-dir /home/waheed/Bitcoin/bitcoin-25.0/data  wallet mint --rune DIRHAMSXYZCOMMON --fee-rate 1
+ord --cookie-file /home/waheed/Bitcoin/bitcoin-25.0/data/regtest/.cookie --data-dir /home/waheed/Bitcoin/bitcoin-25.0/data  wallet mint --rune MYORDINALS.LOAN --fee-rate 1
 
 ord --cookie-file /home/waheed/Bitcoin/bitcoin-25.0/data/regtest/.cookie --data-dir /home/waheed/Bitcoin/bitcoin-25.0/data  wallet mint --rune RUNEXYZCOMMON --fee-rate 1
 
@@ -118,9 +118,10 @@ ord wallet inscribe --batch etch.yaml --fee-rate 10
 bitcoin-cli -rpcport=9000 -rpccookiefile=/home/waheed/Bitcoin/bitcoin-25.0/data/regtest/.cookie -conf=/home/waheed/Bitcoin/bitcoin-25.0/bitcoin.conf generatetoaddress 100 mmEjUTmDdUeLEF3TmL9jrDmRohY1fJhqPz
 
 
+
 bitcoin-cli -conf=$(pwd)/bitcoin.conf -named getnewaddress label=generic-p2tr address_type=bech32m
 
-./bin/bitcoin-cli -conf=$(pwd)/bitcoin.conf generatetoaddress 100 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa
+./bin/bitcoin-cli -conf=$(pwd)/bitcoin.conf generatetoaddress 100 bc1pqx3lfdaa7hfkhk4mlza3wagd3m54v94wg2w5tfs6jejpukw0rztqwtd23s
 
 ./bin/bitcoin-cli -conf=$(pwd)/bitcoin.conf createwallet localaddress
 ./bin/bitcoin-cli -conf=$(pwd)/bitcoin.conf  -rpcwallet=localaddress getnewaddress 

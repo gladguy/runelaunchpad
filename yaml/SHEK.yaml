@@ -1,0 +1,15 @@
+mode: separate-outputs
+etching:
+  rune: SHEK
+  divisibility: 2
+  symbol: 'J'
+  premine: 1
+  supply: 1276
+  terms:
+   cap: 23
+   offset:
+     end: 3312
+   amount: 12
+
+inscriptions:
+  - file: /uploads/files/SHEK.jpg

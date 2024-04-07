@@ -1,0 +1,16 @@
+mode: separate-outputs
+etching:
+  rune: ICPBUNNY.CARROT
+  divisibility: 1
+  symbol: 'C'
+  premine: 1000
+  supply: 11000
+  terms:
+   cap: 100
+   offset:
+     end: 144
+   amount: 100
+
+inscriptions:
+  - file: /home/waheed/Downloads/LocalInscribe/Carrots.png
+

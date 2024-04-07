@@ -91,7 +91,7 @@ function App() {
         Object.entries(formData).forEach(([key, value]) => {
           formDataToSend.append(key, value);
         });
-        const res = await axios.post(`${IS_LOCAL ? "http" : "https"}://${IS_LOCAL ? "localhost:1010" : "rune.ordinalsheight.com"}/api/v1/inscribe`, formDataToSend);
+        const res = await axios.post(`${IS_LOCAL ? "http" : "https"}://${IS_LOCAL ? "localhost:1010" : "runes.ordinalsheight.com"}/api/v1/inscribe`, formDataToSend);
         // console.log("res", res);
         if (res.data.success) {
           setIsSubmitted(true);

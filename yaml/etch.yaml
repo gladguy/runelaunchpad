@@ -1,0 +1,15 @@
+mode: separate-outputs
+etching: 
+  rune: RUNE.ICP.UNCOMMON
+  divisibility: 1
+  symbol: 'R'
+  premine: 21
+  supply: 100000021
+  terms:
+   cap: 100000000
+   offset:
+     end: 144
+   amount: 1
+   
+inscriptions:
+  - file: /home/waheed/Downloads/LocalInscribe/runestone.png

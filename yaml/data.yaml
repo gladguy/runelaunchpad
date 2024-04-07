@@ -1,0 +1,17 @@
+mode: separate-outputs
+etching:
+  rune: MYORDINALS.LOAN
+  divisibility: 1
+  symbol: 'R'
+  premine: 1000
+  supply: 2000
+  terms:
+   cap: 10
+   offset:
+     end: 144
+   amount: 100
+
+inscriptions:
+  - file: /home/waheed/Downloads/LocalInscribe/logo.png
+  
+  
