@@ -101,6 +101,7 @@ ord --cookie-file /home/waheed/Bitcoin/bitcoin-25.0/data/regtest/.cookie --data-
 
 ord --cookie-file /home/waheed/Bitcoin/bitcoin-25.0/data/regtest/.cookie --data-dir /home/waheed/Bitcoin/bitcoin-25.0/data wallet --server-url http://localhost:9001 batch --batch etch.yaml --fee-rate 2
 
+ord --cookie-file <Cookie_path> --data-dir <Env Path> wallet send <Receive address> amount:runename --fee-rate *
 Rune Stone
 https://www.youtube.com/watch?v=cDIHGLJvPh4
 
